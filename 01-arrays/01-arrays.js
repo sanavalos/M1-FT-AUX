@@ -5,15 +5,25 @@ function invertirOrden(array) {
     //
     // DETALLE: En caso de que el elemento contenga mas de 1 digito, el mismo NO debera ser devuelto
     // No vale usar el metodo "reverse"
-    
- 
+    let newArray = [];
+  for(let i = 0; i<array.length; i++){
+    if(array[i].toString().length < 2){
+    newArray.unshift(array[i])
+    }
+  }
+  return newArray
 };
 
 
 function numeroEnComun(array1, array2) {
     // Entre los dos array's que recibe la funcion por parametro
     // Buscar y retornar el valor en comun entre ellos
-   
+    for(let i = 0; i <array1.length; i++){
+    for(let j = 0; j <array2.length; j++){
+    if(array1[i] === array2[j]) return array1[i];
+        }
+    }
+    return Math.min(...array1, ...array2)
 };
 
 
@@ -23,7 +33,17 @@ function sumaDeArrays(array) {
     // Tienen que devolver UN SOLO array que solo contenga elementos de tipo number
     // Sumando los elementos de cada array que contenga dos elementos, y devolviendo la suma del mismo
     // OJO: Si el elemento dentro del array que ingresa por prop, ya es de tipo number, deben devolverlo como tal dentro del array que retornan.
-   
+    let newArray = [];
+    for(let i = 0; i< array.length; i++){
+    let sum = 0;
+    if(typeof array[i] === 'object'){
+    array[i].forEach(number => sum += number)
+    newArray.push(sum)
+    }else{
+    newArray.push(array[i])
+        }
+    }
+    return newArray
 };
 
 

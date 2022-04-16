@@ -19,7 +19,18 @@ const { Queue } = require("../estructuras")
 
 var controlAcces = function(queue, event){
     // Tu código aca:
-    
+    let respuesta = [];
+    let arrAdic = [];
+   for(const key in queue){
+    let arr = queue[key]
+    for(let i=0;i<arr.length;i++){
+       if(arr[i].age>=18 && arr[i].ticket.event === event && !arrAdic.includes(arr[i].ticket.number)){ // EDAD, TICKET, EVENTO, TICKET UNICO
+        arrAdic.push(arr[i].ticket.number);
+        respuesta.push(arr[i].fullname)
+        }
+       }
+     return respuesta
+    } 
   };
       
   
