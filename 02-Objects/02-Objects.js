@@ -5,20 +5,22 @@ function crearClaseLibro() {
       // El constructor de la clase Libro recibe titulo (string), autor (string), traducciones (array de objetos)
       // Inicializar las propiedades del libro con los valores recibidos como argumento
       // Tu código aca:
-    
+     this.titulo = titulo;
+     this.autor = autor;
+     this.traducciones = traducciones
       
     }
 
     getTitulo() {
       // este método debe retornar el titulo del libro.
       // Tu código aca:
-      
+      return this.titulo
     }
 
     getAutor() {
       // El método debe retornar nombre y apellido del autor
       // Tu código aca:
-      
+      return this.autor
     }
 
     addTraduccion(idioma, editorial) {
@@ -26,9 +28,11 @@ function crearClaseLibro() {
       // { idioma: idioma, editorial: editorial} al arreglo de traducciones del libro.
       // No debe retornar nada.
       // Tu código aca:
-           
-      
-
+        let objeto = {
+          idioma: idioma,
+          editorial: editorial
+        }
+        this.traducciones.push(objeto)
     }
 
     getTraducciones() {
