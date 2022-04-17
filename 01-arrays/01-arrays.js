@@ -51,7 +51,16 @@ function mismoValorMismosElementos(numero, divisor) {
     // Tiene que devolver un array con la misma cantidad de elementos que el valor del divisor
     // Todos los elementos deben tener el mismo valor
     // OJO: Si el resultado de la division no es un entero, deben devolver false
-
+    let respuesta = [];
+    let aux = divisor;
+    if(numero % divisor !== 0) return false
+    while (aux !== 0){
+      let cociente = 0;
+         cociente = numero / divisor
+      respuesta.push(cociente)
+      aux--
+    }
+      return respuesta
 };
 
 
@@ -59,7 +68,9 @@ function elementoMenorYMayor(array) {
     // El Array recibido por props es un array que contienen numeros
     // Tenes que retornar un array
     // Solamente con el elemento menor y mayor del array recibido
-    
+    let respuesta = []
+    respuesta.push(Math.min(...array), Math.max(...array))
+    return respuesta
 };
 
 
