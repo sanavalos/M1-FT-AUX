@@ -8,7 +8,6 @@ function crearClaseLibro() {
      this.titulo = titulo;
      this.autor = autor;
      this.traducciones = traducciones
-      
     }
 
     getTitulo() {
@@ -41,7 +40,11 @@ function crearClaseLibro() {
       // Suponiendo que el libro tiene estas traducciones: [{idioma: 'inglés', editorial: 'Scholastic'}, {idioma: 'castellano', editorial: 'Santillana'}]
       // libro.getTraducciones() debería devolver ['inglés', 'castellano']
       // Tu código aca:
-      
+      let array = [];
+      for(let i = 0; i < this.traducciones.length; i++){
+        array.push(this.traducciones[i].idioma)
+      }
+      return array
     }
 
     getAlcance() {
@@ -51,7 +54,8 @@ function crearClaseLibro() {
       // Suponiendo que el libro tiene estas traducciones: [{idioma: 'inglés', editorial: 'Scholastic'}, {idioma: 'castellano', editorial: 'Santillana'}]
       // libro.getAlcance() deberia devolver 2
       // Tu código aca:
-      
+      let array1 = new Set(this.getTraducciones());
+      return array1.size
     }
   }
 
