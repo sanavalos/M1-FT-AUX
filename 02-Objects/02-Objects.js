@@ -80,7 +80,12 @@ const printStaff = function (objeto) {
   // Retornar un arreglo que contenga los strings indicando el titulo y nombre de cada miembro del staff
   // de esta forma "The headmaster is Albus Percival Wulfric Brian Dumbledore" 
   // el arreglo debe mantener el orden que posee el staff del objeto.
-  
-};
-
+  let array = [];
+  let size = Object.keys(objeto.staff).length
+  for(let i = 0; i < size; i++){
+  let string = `The ${Object.keys(objeto.staff)[i]} is ${Object.values(objeto.staff)[i].name}`
+  array.push(string)
+  }
+  return array
+}
 module.exports = { crearClaseLibro, printStaff };
