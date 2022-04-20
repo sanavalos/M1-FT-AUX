@@ -28,7 +28,6 @@ LinkedList.prototype.orderList = function () {
       let aux = current.value; // 2
       current.value = current.next.value; // 7
       current.next.value = aux;// 7 ---> 2
-      current = current.next
       return this.orderList();
       } else{
       current = current.next
